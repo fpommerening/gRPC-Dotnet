@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "FP.gRPCdoetnet.Streaming.Simplex.Contract";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+package streaming;
+
+service StreamingServices {
+  rpc SendLog (stream LogRequest) returns (google.protobuf.Empty);
+  rpc GetTime ( GetTimeRequest) returns (stream GetTimeResponse);
+}
+
+message LogRequest {
+  string message = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+message GetTimeRequest {
+	string Name = 1;
+	int32 Count = 2;
+}
+
+message GetTimeResponse {
+	google.protobuf.Timestamp timestamp = 1;
+}

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>8</LangVersion>
+    <RootNamespace>FP.gRPCdoetnet.Streaming.Simplex.Client</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Protobuf Include="..\Proto\streaming.proto" GrpcServices="Client" Link="Protos\streaming.proto" />
+    <PackageReference Include="Google.Protobuf" Version="3.17.2" />
+  <PackageReference Include="Grpc.Net.Client" Version="2.37.0" />
+  <PackageReference Include="Grpc.Tools" Version="2.38.0" PrivateAssets="All" />
+</ItemGroup>
+</Project>
