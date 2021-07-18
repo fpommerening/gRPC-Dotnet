@@ -22,7 +22,6 @@ namespace FP.gRPCdotnet.Workshop.Server.Services
 
         public override Task<GetWorkshopsResponse> GetWorkshops(GetWorkshopsRequest request, ServerCallContext context)
         {
-
             var response = new GetWorkshopsResponse();
             foreach (var repoWorkshop in _repository.GetWorkshops())
             {
@@ -40,29 +39,12 @@ namespace FP.gRPCdotnet.Workshop.Server.Services
                 response.Items.Add(workhop);
             }
 
-            
-
             return Task.FromResult(response);
         }
-
-        public override Task<Empty> AddAttendee(AddAttendeeRequest request, ServerCallContext context)
+     
+        private gRPCdoetnet.Workshop.Contract.Workshop.Types.Person MapPerson(Business.Person person)
         {
-            try
-            {
-                _repository.AddAttendee(request.Id, request.Person.Name, request.Person.Firstname,
-                    request.Person.Email);
-            }
-            catch (IndexOutOfRangeException iex)
-            {
-                context.Status = new Status(StatusCode.InvalidArgument, iex.Message);
-            }
-            
-            return Task.FromResult(new Empty());
-        }
-
-        private gRPCdoetnet.Workshop.Contract.Person MapPerson(Business.Person person)
-        {
-            return new gRPCdoetnet.Workshop.Contract.Person
+            return new gRPCdoetnet.Workshop.Contract.Workshop.Types.Person
             {
                 Name = person.Name,
                 Firstname = person.FirstName,

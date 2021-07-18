@@ -33,12 +33,10 @@ namespace FP.gRPCdotnet.Workshop.Server
             }
 
             app.UseRouting();
-            app.UseGrpcMetrics();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<WorkshopService>();
-                endpoints.MapMetrics();
 
                 endpoints.MapGet("/", async context =>
                 {
