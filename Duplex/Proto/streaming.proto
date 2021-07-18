@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "FP.gRPCdoetnet.Streaming.Duplex.Contract";
+
+import "google/protobuf/timestamp.proto";
+
+package duplex;
+
+service StreamingServices {
+  rpc SendMultiEcho (stream EchoMessage) returns (stream EchoMessage);
+}
+
+message EchoMessage {
+  string content = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
