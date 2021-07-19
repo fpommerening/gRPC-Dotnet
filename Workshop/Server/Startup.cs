@@ -17,7 +17,7 @@ namespace FP.gRPCdotnet.Workshop.Server
         {
             services.AddGrpc(options =>
             {
-                options.Interceptors.Add(typeof(RpcExceptionWrapperInterceptor));
+                //options.Interceptors.Add(typeof(RpcExceptionWrapperInterceptor));
                 // options.EnableDetailedErrors = true;
             });
             
