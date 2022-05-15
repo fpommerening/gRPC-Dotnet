@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using FP.gRPCdoetnet.Workshop.Contract;
+using FP.gRPCdotnet.Workshop.Contract;
 using FP.gRPCdotnet.Workshop.Server.Business;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
@@ -26,12 +26,12 @@ namespace FP.gRPCdotnet.Workshop.Server.Services
             var response = new GetWorkshopsResponse();
             foreach (var repoWorkshop in _repository.GetWorkshops())
             {
-                var workhop = new gRPCdoetnet.Workshop.Contract.Workshop
+                var workhop = new gRPCdotnet.Workshop.Contract.Workshop
                 {
                     Name = repoWorkshop.Name,
                     Instructor = MapPerson(repoWorkshop.Instructor),
                     Id = repoWorkshop.Id,
-                    Level = (gRPCdoetnet.Workshop.Contract.Workshop.Types.Level)(int)repoWorkshop.Level,
+                    Level = (gRPCdotnet.Workshop.Contract.Workshop.Types.Level)(int)repoWorkshop.Level,
                     Price = repoWorkshop.Price,
                     Date = Timestamp.FromDateTime(repoWorkshop.Date),
                 };
@@ -60,9 +60,9 @@ namespace FP.gRPCdotnet.Workshop.Server.Services
             return Task.FromResult(new Empty());
         }
 
-        private gRPCdoetnet.Workshop.Contract.Person MapPerson(Business.Person person)
+        private gRPCdotnet.Workshop.Contract.Person MapPerson(Business.Person person)
         {
-            return new gRPCdoetnet.Workshop.Contract.Person
+            return new gRPCdotnet.Workshop.Contract.Person
             {
                 Name = person.Name,
                 Firstname = person.FirstName,

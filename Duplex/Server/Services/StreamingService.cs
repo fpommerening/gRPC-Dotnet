@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading.Tasks;
-using FP.gRPCdoetnet.Streaming.Duplex.Contract;
+using FP.gRPCdotnet.Streaming.Duplex.Contract;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
-namespace FP.gRPCdoetnet.Streaming.Simplex.Server.Services
+namespace FP.gRPCdotnet.Streaming.Simplex.Server.Services
 {
     public class StreamingService : StreamingServices.StreamingServicesBase
     {

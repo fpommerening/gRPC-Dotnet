@@ -1,5 +1,5 @@
 ﻿using System;
-using FP.gRPCdoetnet.Workshop.Contract;
+using FP.gRPCdotnet.Workshop.Contract;
 using Grpc.Net.Client;
 
 namespace FP.gRPCdotnet.Workshop.Client

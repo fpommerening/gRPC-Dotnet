@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using FP.gRPCdoetnet.Streaming.Simplex.Contract;
+using FP.gRPCdotnet.Streaming.Simplex.Contract;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Grpc.Net.Client;
 
-namespace FP.gRPCdoetnet.Streaming.Simplex.Client
+namespace FP.gRPCdotnet.Streaming.Simplex.Client
 {
     class Program
     {

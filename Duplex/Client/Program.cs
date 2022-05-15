@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using FP.gRPCdoetnet.Streaming.Duplex.Contract;
+using FP.gRPCdotnet.Streaming.Duplex.Contract;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Grpc.Net.Client;
 
-namespace FP.gRPCdoetnet.Streaming.Simplex.Client
+namespace FP.gRPCdotnet.Streaming.Simplex.Client
 {
     class Program
     {
@@ -13,6 +13,8 @@ namespace FP.gRPCdoetnet.Streaming.Simplex.Client
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new StreamingServices.StreamingServicesClient(channel);
+            
+            await Task.Delay(7500);
 
             try
             {

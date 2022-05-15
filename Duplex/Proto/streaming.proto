@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "FP.gRPCdoetnet.Streaming.Duplex.Contract";
+option csharp_namespace = "FP.gRPCdotnet.Streaming.Duplex.Contract";
 
 import "google/protobuf/timestamp.proto";
 

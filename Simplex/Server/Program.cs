@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace FP.gRPCdoetnet.Streaming.Simplex.Server
+namespace FP.gRPCdotnet.Streaming.Simplex.Server
 {
     public class Program
     {

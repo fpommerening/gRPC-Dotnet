@@ -1,11 +1,11 @@
-﻿using FP.gRPCdoetnet.Streaming.Simplex.Server.Services;
+﻿using FP.gRPCdotnet.Streaming.Simplex.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace FP.gRPCdoetnet.Streaming.Simplex.Server
+namespace FP.gRPCdotnet.Streaming.Simplex.Server
 {
     public class Startup
     {
