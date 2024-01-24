@@ -11,12 +11,10 @@ namespace FP.gRPCdotnet.Streaming.Simplex.Client
     {
         static async Task Main(string[] args)
         {
-            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var channel = GrpcChannel.ForAddress("http://localhost:5002");
             var client = new StreamingServices.StreamingServicesClient(channel);
-            //await SendLogs(client);
-            await GetTime(client);
-
-
+            await SendLogs(client);
+            //await GetTime(client);
         }
 
         private static async Task SendLogs(StreamingServices.StreamingServicesClient client)
