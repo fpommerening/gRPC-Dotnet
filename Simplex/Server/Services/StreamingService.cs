@@ -1,9 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using FP.gRPCdotnet.Streaming.Simplex.Contract;
+﻿using FP.gRPCdotnet.Streaming.Simplex.Contract;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
-using Microsoft.Extensions.Logging;
 
 namespace FP.gRPCdotnet.Streaming.Simplex.Server.Services;
 

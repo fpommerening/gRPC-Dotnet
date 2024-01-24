@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>FP.gRPCdotnet.Workshop.Client</RootNamespace>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
 		<Protobuf Include="..\Proto\workshop.proto" GrpcServices="Client" Link="Protos\workshop.proto" />

@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>FP.gRPCdotnet.Streaming.Simplex.Client</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <Protobuf Include="..\Proto\streaming.proto" GrpcServices="Client" Link="Protos\streaming.proto" />

@@ -1,22 +1,38 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using FP.gRPCdotnet.Workshop.Server.Business;
+using FP.gRPCdotnet.Workshop.Server.Services;
+using Prometheus;
 
-namespace FP.gRPCdotnet.Workshop.Server
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddGrpc(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+    options.Interceptors.Add(typeof(RpcExceptionWrapperInterceptor));
+    // options.EnableDetailedErrors = true;
+});
 
-        // Additional configuration is required to successfully run gRPC on macOS.
-        // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-}
+builder.Services.AddSingleton(new WorkshopRepository());
+
+var app = builder.Build();
+
+app.UseGrpcMetrics();
+// Configure the HTTP request pipeline.
+app.MapGrpcService<WorkshopService>();
+app.MapMetrics();
+app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
+
+app.Run();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
