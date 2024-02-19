@@ -8,43 +8,6 @@ import "google/protobuf/timestamp.proto";
 package workshops;
 
 service WorkshopServices {
-rpc GetWorkshops (GetWorkshopsRequest) returns (GetWorkshopsResponse);
-rpc AddAttendee (AddAttendeeRequest) returns (google.protobuf.Empty);
-}
-
-message GetWorkshopsRequest {
-}
-
-message GetWorkshopsResponse {
-	repeated Workshop items = 1;
-}
-
-message AddAttendeeRequest {
-	int32 id = 1;
-	Person person = 2;
-}
-
-message Person {
-	string name = 1;
-	string firstname = 2;
-	string email = 3;
-}
-
-message Workshop {
-	enum Level {
-		UNKNOWN = 0;
-		BEGINNER = 1;
-		ADVANCED = 2;
-		PROFESSIONAL =3;
-	}
-
-	int32 id = 1;
-	string name = 2;
-	Person instructor = 3;
-	google.protobuf.Timestamp date = 4;
-	float price = 5;
-	Level level = 6;
-	repeated Person attendees = 7;
 }
 
 
